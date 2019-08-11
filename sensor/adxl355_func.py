@@ -1,9 +1,11 @@
 import spidev
 import time
 import numpy as np
-import sys
 
-import adxl_lib2 as adxl355
+import sys
+sys.path.append("../")
+
+import sensor.adxl_lib2 as adxl355
 
 
 def measure(outputfilename,measuretime):

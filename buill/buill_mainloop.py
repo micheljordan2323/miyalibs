@@ -63,7 +63,7 @@ Thing_sampling=int( conf.get("period","thing_sampling"))
 
 
 #thingspeak
-fieldlist=["field1","field2","field3","field4","field5","field6"]
+fieldlist=["field1","field2","field3"]
 thg=thingspeak.thingspeak(conf.get("thingspeak","APIKEY"))
 thg.set_field(fieldlist)
 
@@ -175,9 +175,9 @@ while pi.state != "quit":
         y_std=df["y"].std()
         z_std=df["z"].std()
 
-        self.x_std2=x_std
-        self.y_std2=y_std
-        self.z_std2=z_std
+        pi.x_std2=x_std
+        pi.y_std2=y_std
+        pi.z_std2=z_std
 
         #thing speak
         #いったんコメントアウト
@@ -202,7 +202,7 @@ while pi.state != "quit":
 
         #thing speak
         #いったんコメントアウト
-        datlist=[self.x_std2,self.y_std2,self.z_std2]
+        datlist=[pi.x_std2,pi.y_std2,pi.z_std2]
         thg.sendall(datlist)
 
         #camera
