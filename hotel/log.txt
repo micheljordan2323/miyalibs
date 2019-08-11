@@ -1,0 +1,390 @@
+[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/0.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/1.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/2.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/3.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/4.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/5.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/6.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/7.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/8.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/9.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/10.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[31mError selecting input 0
+[0m[31mVIDIOC_S_INPUT: Device or resource busy
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/12.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/13.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[31mError selecting input 0
+[0m[31mVIDIOC_S_INPUT: Device or resource busy
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/15.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m./hotel.db
+init
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+Traceback (most recent call last):
+  File "hotelmain.py", line 148, in <module>
+    d6t.reopen()
+  File "/home/pi/hotel2/grove_d6t_copy.py", line 18, in reopen
+    self.handle = self.pi.i2c_open(1, 0x0a)
+  File "/usr/lib/python3/dist-packages/pigpio.py", line 2585, in i2c_open
+    self.sl, _PI_CMD_I2CO, i2c_bus, i2c_address, 4, extents))
+  File "/usr/lib/python3/dist-packages/pigpio.py", line 970, in _u2i
+    raise error(error_text(v))
+pigpio.error: 'no handle available'
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/18.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/19.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/20.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[31mError selecting input 0
+[0m[31mVIDIOC_S_INPUT: Device or resource busy
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[31mError selecting input 0
+[0m[31mVIDIOC_S_INPUT: Device or resource busy
+[0m[1m--- Opening /dev/video0...
+[0m[0mTrying source module v4l2...
+[0m[0m/dev/video0 opened.
+[0m[0mNo input was specified, using the first.
+[0m[0mAdjusting resolution from 384x288 to 352x288.
+[0m[1m--- Capturing frame...
+[0m[0mCaptured frame in 0.00 seconds.
+[0m[1m--- Processing captured image...
+[0m[0mWriting JPEG image to './log/23.jpg'.
+[0m[0mWriting JPEG image to 'now'.
+[0m./hotel.db
+init
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+OK
+measure
+wait
+*** measure ***
+Traceback (most recent call last):
+  File "hotelmain.py", line 149, in <module>
+    tpn0, tptat = d6t.readData()
+  File "/home/pi/hotel2/grove_d6t_copy.py", line 34, in readData
+    self.handle = self.pi.i2c_open(1, 0x0a)
+  File "/usr/lib/python3/dist-packages/pigpio.py", line 2585, in i2c_open
+    self.sl, _PI_CMD_I2CO, i2c_bus, i2c_address, 4, extents))
+  File "/usr/lib/python3/dist-packages/pigpio.py", line 970, in _u2i
+    raise error(error_text(v))
+pigpio.error: 'no handle available'

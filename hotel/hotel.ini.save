@@ -1,0 +1,11 @@
+[setting]
+dbfile = ./hotel.db
+log = ./log/
+camera = yes
+
+[thingspeak]
+apikey = L0Z78PQTFYUWIER3
+
+[period]sasasasafsdfadfasafsdfasdmp
+totalperiod = 7200sasampling = 60
+
