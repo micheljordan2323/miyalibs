@@ -31,7 +31,7 @@ class miyadb:
     def init_table2(self):
         sqltemp=""
         try:
-            sqltemp=",".join([kk+" "+val for kk,val in self.key.items()])
+            sqltemp=",".join([kk+" "+val for kk,val in self.key])
             
             sql="CREATE TABLE IF NOT EXISTS data (id INTEGER PRIMARY KEY,"+sqltemp+")"
             #create_table = '''create table data (id int, time text,temp real, humid real,ave real,std real,numdata int,rawdata text)'''
@@ -58,7 +58,7 @@ class miyadb:
         self.cr.execute(sql, inp)
         self.db.commit()
     def append2(self,inp):
-        sqltemp=",".join([kk for kk in self.key.keys()])
+        sqltemp=",".join([kk for kk,vv in self.key])
         valtemp=",".join("?" for t in range(len(self.key)))
         sql="insert into data({0}) values({1})".format(sqltemp,valtemp)
 #        inp = (dat[0],dat[1],dat[2],dat[3],dat[4],dat[5] ,dat[6],dat[7])

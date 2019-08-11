@@ -33,8 +33,8 @@ else:
     conf.add_section("thingspeak")
     conf.set("thingspeak","APIKEY","L0Z78PQTFYUWIER3")
     conf.add_section("period")
-    conf.set("period","totalperiod","60")#sec単位
-    conf.set("period","sampling","10")#sec単位
+    conf.set("period","totalperiod","120")#sec単位
+    conf.set("period","sampling","30")#sec単位
     print("make config")
     with open(configfile, 'w') as configfile:
         conf.write(configfile)
@@ -49,7 +49,7 @@ SamplingPeriod=float( conf.get("period","sampling"))
 
 
 #thingspeak
-fieldlist=["field7"]
+fieldlist=["field6"]
 thg=thingspeak.thingspeak("L0Z78PQTFYUWIER3")
 thg.set_field(fieldlist)
 
@@ -57,7 +57,7 @@ thg.set_field(fieldlist)
 #idは自動で追加されます
 
 
-key={"cnt":"int","time":"text","co2":"real"}
+key=[("cnt","int"),("time","text"),("co2","real")]
 print(conf.get("setting","dbfile"))
 db=sql_lib.miyadb(conf.get("setting","dbfile"),key)
 
