@@ -53,15 +53,16 @@ class miyadb:
     
     def append(self,dat):
         sql = 'insert into data (id, time ,temp,humid,ave,std,numdata,rawdata) values (?,?,?,?,?,?,?,?)'
-        print(dat)
+#        print(dat)
         inp = (dat[0],dat[1],dat[2],dat[3],dat[4],dat[5] ,dat[6],dat[7])
+        print(inp)
         self.cr.execute(sql, inp)
         self.db.commit()
     def append2(self,inp):
         sqltemp=",".join([kk for kk,val in self.key])
         valtemp=",".join("?" for t in range(len(self.key)))
         sql="insert into data({0}) values({1})".format(sqltemp,valtemp)
-        print(sql)
+        print(inp)
 #        inp = (dat[0],dat[1],dat[2],dat[3],dat[4],dat[5] ,dat[6],dat[7])
         self.cr.execute(sql, inp)
         self.db.commit()
