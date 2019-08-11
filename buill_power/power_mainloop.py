@@ -39,7 +39,7 @@ else:
     conf.set("thingspeak","APIKEY","VXI31K2ILAHWUOKS")
     conf.add_section("period")
 
-    conf.set("period","totalperiod",str(1*60))#sec単位
+    conf.set("period","totalperiod",str(2*60+1))#sec単位
     conf.set("period","sampling",str(5))#sec単位
     conf.set("period","renzoku",str(1))
     conf.set("period","thing_sampling",str(60))#　thingspeak upload間隔
@@ -68,7 +68,7 @@ thg.set_field(fieldlist)
 #idは自動で追加されます
 
 
-key={"cnt":"int","time":"text","current":"real"}
+key=[("cnt","int"),("time","text"),("current","real")]
 print(conf.get("setting","dbfile"))
 db=sql_lib.miyadb(conf.get("setting","dbfile"),key)
 
@@ -83,6 +83,14 @@ db.init_table2()
 
 
 adc1015=adc.ads1015()
+
+
+def rms(dat):
+    ret=0
+    for dd in dat:
+        ret=ret+dd*dd
+    ret=np.sqrt(ret)/len(dat)
+    return ret
 
 
 
@@ -158,21 +166,19 @@ while pi.state != "quit":
 
         print("*** measure ***")
         filename="test{0}.csv".format(pi.cnt)
-        adc1015.measure(filename,3,SokuteiPeriod,0.001)
+        adc1015.measure(filename,3,SokuteiPeriod,0.00001)
         df=pd.read_csv(filename)
         df.columns=["x"]
-        x_ave=df["x"].mean()
-        pi.buf_cur=x_ave
+        x_rms=rms(df["x"].values)
+        pi.buf_cur=x_rms
+        print("sokudo")
+        print(SokuteiPeriod/len(df)*1000)
 
-        #thing speak
-        #いったんコメントアウト
-        datlist=[x_ave]
-        thg.sendall(datlist)
 
         #sqlite append
         pi.t1=time.time()
         tm=dt.datetime.now()
-        dat=[pi.cnt,tm,x_ave]
+        dat=[pi.cnt,tm,x_rms]
         db.append2(dat)
 
 

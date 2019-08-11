@@ -36,7 +36,7 @@ class ads1015:
         # Start continuous ADC conversions on channel 0 using the previously set gain
         # value.  Note you can also pass an optional data_rate parameter, see the simpletest.py
         # example and read_adc function for more infromation.
-        self.adc.start_adc(channel, gain=self.GAIN)
+        self.adc.start_adc(channel, gain=self.GAIN,data_rate=3300)
         # Once continuous ADC conversions are started you can call get_last_result() to
         # retrieve the latest result, or stop_adc() to stop conversions.
 
@@ -56,7 +56,7 @@ class ads1015:
             # continuous conversion!
             # print('Channel 0: {0}'.format(value))
             # Sleep for half a second.
-            time.sleep(sleep_period)
+            #time.sleep(sleep_period)
 
         # Stop continuous conversion.  After this point you can't get data from get_last_result!
         self.adc.stop_adc()
