@@ -6,7 +6,7 @@
 import time
 import pigpio
 import numpy as np
-import matplotlib.pyplot as plt 
+#import matplotlib.pyplot as plt 
 
 D6T={"44L":4*4,"8L":1*8,"32L":32*32}
 D6T={"44L":{"SOSI":4*4,"BYTE":35},"8L":{"SOSI":1*8,"BYTE":19},"32L":{"SOSI":32*32,"BYTE":2051}}
