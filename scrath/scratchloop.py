@@ -29,6 +29,24 @@ import sensor.omron_2smpd_lib as omron_2smpd_lib
 import scratch
 import numpy
 s=scratch.Scratch(host="192.168.11.28")
+
+s.sensorupdate({"temp":0})
+time.sleep(1)
+buf=s.receive()
+
+s.sensorupdate({"humid":0})
+time.sleep(1)
+buf=s.receive()
+
+s.sensorupdate({"press":0})
+time.sleep(1)
+buf=s.receive()
+
+s.sensorupdate({"cnt":0})
+time.sleep(1)
+buf=s.receive()
+
+
 #s.connection()
 a=0
 
@@ -100,8 +118,8 @@ states = ['init', 'wait', 'measure1','measure2', 'quit']
 transitions = [
     { 'trigger': 'end_init',       'source': 'init',   'dest': 'wait'},
 
-    { 'trigger': 'trig1',  'source': 'wait',  'dest': 'measure1','before': 'checktime1'},
-    { 'trigger': 'end_measure',  'source': 'measure1',   'dest': 'wait','before': 'checktime1'},
+#    { 'trigger': 'trig1',  'source': 'wait',  'dest': 'measure1','before': 'checktime1'},
+#    { 'trigger': 'end_measure',  'source': 'measure1',   'dest': 'wait','before': 'checktime1'},
 
     { 'trigger': 'trig2',  'source': 'wait',  'dest': 'measure2','before': 'checktime2'},
     { 'trigger': 'end_measure',  'source': 'measure2',   'dest': 'wait','before': 'checktime2'},
@@ -154,16 +172,29 @@ while pi.state != "quit":
         if time.time()-pi.t0 > TotalPeriod:
             pi.timeend()
         if time.time()-pi.t1 > SamplingPeriod:
-            pi.trig1()
+            pass
+#            pi.trig1()
 #        if time.time()-pi.t2 > ThingPeriod:
 #            pi.trig2()
         temp,humid=sht.read()
         press, temp = psensor.readData()
 
         s.sensorupdate({"temp":temp})
+        buf=s.receive()
+        print(buf)
+
+
         s.sensorupdate({"humid":humid})
+        buf=s.receive()
+        print(buf)
+
         s.sensorupdate({"press":press})
-        s.sensorupdate({"cnt":pi.cnt})
+        buf=s.receive()
+        print(buf)
+
+#        s.sensorupdate({"cnt":pi.cnt})
+#        buf=s.receive()
+#        print(buf)
 
         time.sleep(1.0)
         buf=s.receive()
@@ -180,9 +211,9 @@ while pi.state != "quit":
         temp,humid=sht.read()
         press, temp = psensor.readData()
 
-        s.sensorupdate({"temp":temp})
-        s.sensorupdate({"humid":humid})
-        s.sensorupdate({"press":press})
+#        s.sensorupdate({"temp":temp})
+#        s.sensorupdate({"humid":humid})
+#        s.sensorupdate({"press":press})
 
 
         pi.cnt=pi.cnt+1
@@ -238,6 +269,5 @@ while pi.state != "quit":
 #        print("Disconnected")
 #        break
 
-s.disconnect()
 
 
