@@ -37,11 +37,15 @@ class GroveD6t:
 
 
     def readData2(self):
+        print("d6t 32 read2")
         try:
             self.handle = self.pi.i2c_open(1, 0x0a)
         except AttributeError:
             print('If you have not executed the "sudo pigpiod" command, please execute it.')
             raise
+        except:
+            print("something error1")
+
 
         data=None
         try:
@@ -54,19 +58,36 @@ class GroveD6t:
         except pigpio.error:
             print('Failed to read data.')
             return None,None
+        except:
+            print("something error2")
         
         tp = []
         tptat = 0
 
 
+        print("config")
+        print(D6T[self.d6type]["SOSI"])
+        print(D6T[self.d6type]["BYTE"])
 
 
         #try:
+        print("about data len")
+        print(len(data))
+        print("about content data[0]")
+        print(data[0])
+        print("about content data[1]")
+        print(data[1])
+        time.sleep(10)
+        for i in data[1][:16]:
+            print(i)
 
+        print("check")
+        print(data[1][2])
         
         print("loop")
 
         for ii in np.arange(0,D6T[self.d6type]["SOSI"]+1):
+            print("sosi {0} upper {1} lower {2}".format(ii,data[1][ii*2+1],data[1][ii*2]))
             t=(data[1][ii*2+1]*256+data[1][ii*2])/10
             tp.append(t)
         tptat=tp[0]

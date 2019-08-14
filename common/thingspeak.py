@@ -38,9 +38,13 @@ class thingspeak:
         for field,val in zip(self.fieldlist,valuelist):
             addurl="&"+field+"="+str(val)
             baseurl=baseurl+addurl
-        f=ul.urlopen(baseurl)
-        if f.code==200:
-            lastconnectiontime=time.time()
-            print("OK")
-        else:
-            print(baseurl)
+        try:
+            f=ul.urlopen(baseurl)
+            if f.code==200:
+                lastconnectiontime=time.time()
+                print("OK")
+            else:
+                print(baseurl)
+        except:
+            print("thingspeak error")
+            
