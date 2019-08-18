@@ -16,18 +16,23 @@ class GroveD6t:
     pi = pigpio.pi()
     handle = 0
     d6type=None
+    buf_tpn=[]
     def reopen(self):
+        print("i2c addr {0}".format(self.I2C_ADDR))
         try:
             print(self.I2C_ADDR)
             self.handle = self.pi.i2c_open(1, self.I2C_ADDR)
         except AttributeError:
             print('If you have not executed the "sudo pigpiod" command, please execute it.')
             raise
+        except:
+            print("open error")
         
 
     def __init__(self,ty="44L"):
         self.d6type=ty
-        self.I2C_ADDR = 0x0A
+        self.I2C_ADDR = 0x0a
+        self.buf_tpn=[]
 
 #        try:
 #            self.handle = self.pi.i2c_open(1, 0x0a)
@@ -38,13 +43,15 @@ class GroveD6t:
 
     def readData2(self):
         print("d6t 32 read2")
+
         try:
-            self.handle = self.pi.i2c_open(1, 0x0a)
+            #self.handle = self.pi.i2c_open(1, 0x0a)
+            pass
         except AttributeError:
             print('If you have not executed the "sudo pigpiod" command, please execute it.')
             raise
         except:
-            print("something error1")
+            print("i2c open error ? something error1")
 
 
         data=None
@@ -56,7 +63,7 @@ class GroveD6t:
 
             data = self.pi.i2c_read_device(self.handle, D6T[self.d6type]["BYTE"])
         except pigpio.error:
-            print('Failed to read data.')
+            print('readdata2 Failed to read data.')
             return None,None
         except:
             print("something error2")
@@ -71,35 +78,30 @@ class GroveD6t:
 
 
         #try:
-        print("about data len")
+        print("about data len  test")
         print(len(data))
-        print("about content data[0]")
-        print(data[0])
-        print("about content data[1]")
-        print(data[1])
-        time.sleep(10)
-        for i in data[1][:16]:
-            print(i)
 
-        print("check")
-        print(data[1][2])
+        print("check print(data)")
+        print(data)
         
         print("loop")
 
-        for ii in np.arange(0,D6T[self.d6type]["SOSI"]+1):
-            print("sosi {0} upper {1} lower {2}".format(ii,data[1][ii*2+1],data[1][ii*2]))
-            t=(data[1][ii*2+1]*256+data[1][ii*2])/10
-            tp.append(t)
-        tptat=tp[0]
-        tp=tp[1:]
-
+        if len(data[1])>0:
+            for ii in np.arange(0,D6T[self.d6type]["SOSI"]+1):
+    #            print("sosi {0} upper {1} lower {2}".format(ii,data[1][ii*2+1],data[1][ii*2]))
+                t=(data[1][ii*2+1]*256+data[1][ii*2])/10
+                tp.append(t)
+            tptat=tp[0]
+            tp=tp[1:]
+            return tp, tptat
+        else:
+            print("read error last")
 #        except IndexError:
 #            print('got an incorrect index.')
 #            print(data)
 #            return None,None
 
-        self.pi.i2c_close(self.handle)
-        return tp, tptat
+#        self.pi.i2c_close(self.handle)
 
 
 
