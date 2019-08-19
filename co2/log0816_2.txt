@@ -215,4 +215,379 @@ wait
 h value
 0
 gas_ppm{sensor="SCD30",gas="CO2"} 1412.054810
-temperature_degC{sens
+temperature_degC{sensor="SCD30"} 26.935989
+humidity_rel_percent{sensor="SCD30"} 45.381165
+1412.05481
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1366.940063
+temperature_degC{sensor="SCD30"} 27.344551
+humidity_rel_percent{sensor="SCD30"} 43.544006
+1366.940063
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1386.574951
+temperature_degC{sensor="SCD30"} 28.658348
+humidity_rel_percent{sensor="SCD30"} 44.497681
+1386.574951
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1376.999878
+temperature_degC{sensor="SCD30"} 27.090866
+humidity_rel_percent{sensor="SCD30"} 44.926453
+1376.999878
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1360.272461
+temperature_degC{sensor="SCD30"} 26.879913
+humidity_rel_percent{sensor="SCD30"} 44.569397
+1360.272461
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1411.808105
+temperature_degC{sensor="SCD30"} 28.078888
+humidity_rel_percent{sensor="SCD30"} 43.797302
+1411.808105
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1491.299316
+temperature_degC{sensor="SCD30"} 28.415352
+humidity_rel_percent{sensor="SCD30"} 41.850281
+1491.299316
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1408.150635
+temperature_degC{sensor="SCD30"} 27.486076
+humidity_rel_percent{sensor="SCD30"} 44.309998
+1408.150635
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1429.032104
+temperature_degC{sensor="SCD30"} 28.727776
+humidity_rel_percent{sensor="SCD30"} 44.935608
+1429.032104
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1442.273804
+temperature_degC{sensor="SCD30"} 27.598228
+humidity_rel_percent{sensor="SCD30"} 44.786072
+1442.273804
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1460.380127
+temperature_degC{sensor="SCD30"} 28.826584
+humidity_rel_percent{sensor="SCD30"} 43.978882
+1460.380127
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1419.463623
+temperature_degC{sensor="SCD30"} 27.670326
+humidity_rel_percent{sensor="SCD30"} 45.320129
+1419.463623
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1459.266357
+temperature_degC{sensor="SCD30"} 28.458076
+humidity_rel_percent{sensor="SCD30"} 45.892334
+1459.266357
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1439.314697
+temperature_degC{sensor="SCD30"} 27.146942
+humidity_rel_percent{sensor="SCD30"} 45.681763
+1439.314697
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1490.255981
+temperature_degC{sensor="SCD30"} 28.938736
+humidity_rel_percent{sensor="SCD30"} 45.713806
+1490.255981
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1430.880859
+temperature_degC{sensor="SCD30"} 26.484703
+humidity_rel_percent{sensor="SCD30"} 47.459412
+1430.880859
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1447.807007
+temperature_degC{sensor="SCD30"} 28.177689
+humidity_rel_percent{sensor="SCD30"} 47.920227
+1447.807007
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1458.179077
+temperature_degC{sensor="SCD30"} 27.344551
+humidity_rel_percent{sensor="SCD30"} 45.944214
+1458.179077
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1461.848267
+temperature_degC{sensor="SCD30"} 28.615623
+humidity_rel_percent{sensor="SCD30"} 47.283936
+1461.848267
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1471.734985
+temperature_degC{sensor="SCD30"} 27.403297
+humidity_rel_percent{sensor="SCD30"} 46.272278
+1471.734985
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1524.313110
+temperature_degC{sensor="SCD30"} 28.487450
+humidity_rel_percent{sensor="SCD30"} 47.088623
+1524.31311
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1486.245972
+temperature_degC{sensor="SCD30"} 27.710381
+humidity_rel_percent{sensor="SCD30"} 46.667480
+1486.245972
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1520.126221
+temperature_degC{sensor="SCD30"} 29.021515
+humidity_rel_percent{sensor="SCD30"} 45.257568
+1520.126221
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1494.022217
+temperature_degC{sensor="SCD30"} 28.965439
+humidity_rel_percent{sensor="SCD30"} 46.707153
+1494.022217
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1481.304077
+temperature_degC{sensor="SCD30"} 27.950714
+humidity_rel_percent{sensor="SCD30"} 46.556091
+1481.304077
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1488.632568
+temperature_degC{sensor="SCD30"} 29.360649
+humidity_rel_percent{sensor="SCD30"} 46.519470
+1488.632568
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1548.457642
+temperature_degC{sensor="SCD30"} 28.556877
+humidity_rel_percent{sensor="SCD30"} 44.377136
+1548.457642
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1627.031250
+temperature_degC{sensor="SCD30"} 29.264519
+humidity_rel_percent{sensor="SCD30"} 46.936035
+1627.03125
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1674.447144
+temperature_degC{sensor="SCD30"} 28.345924
+humidity_rel_percent{sensor="SCD30"} 45.782471
+1674.447144
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1688.833374
+temperature_degC{sensor="SCD30"} 28.978790
+humidity_rel_percent{sensor="SCD30"} 48.104858
+1688.833374
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1791.610229
+temperature_degC{sensor="SCD30"} 28.220413
+humidity_rel_percent{sensor="SCD30"} 46.040344
+1791.610229
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1755.084717
+temperature_degC{sensor="SCD30"} 28.826584
+humidity_rel_percent{sensor="SCD30"} 48.146057
+1755.084717
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1831.553101
+temperature_degC{sensor="SCD30"} 28.527504
+humidity_rel_percent{sensor="SCD30"} 45.198059
+1831.553101
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1841.876099
+temperature_degC{sensor="SCD30"} 28.500801
+humidity_rel_percent{sensor="SCD30"} 48.355103
+1841.876099
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1927.971680
+temperature_degC{sensor="SCD30"} 28.543526
+humidity_rel_percent{sensor="SCD30"} 45.019531
+1927.97168
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1912.506104
+temperature_degC{sensor="SCD30"} 28.121613
+humidity_rel_percent{sensor="SCD30"} 50.077820
+1912.506104
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1984.985229
+temperature_degC{sensor="SCD30"} 28.036163
+humidity_rel_percent{sensor="SCD30"} 46.482849
+1984.985229
+OK
+measure
+wait
+*** measure ***
+h value
+0
+gas_ppm{sensor="SCD30",gas="CO2"} 1993.090942
+temperature_degC{sensor="SCD30"} 28.839935
+humidity_rel_percent{sensor="SCD30"} 48.745728
+1993.090942
+OK
+measure
+end
