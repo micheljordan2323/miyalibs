@@ -1,6 +1,3 @@
-####
-# 高速化検討
-
 import datetime as dt
 import time
 import os
@@ -23,25 +20,25 @@ import common.sql_lib as sql_lib
 import common.thingspeak as thingspeak
 import common.fswebcamtest as fswebcamtest
 
-import sensor.grove_d6t as d6t_lib
+import sensor.grove_d6t32_temp as d6t_lib
 
 
-import sensor.sht30_lib as sht30
-import sensor.omron_2smpd_lib as omron_2smpd_lib
+#import sensor.sht30_lib as sht30
+#import sensor.omron_2smpd_lib as omron_2smpd_lib
 
 
 ####################
 # Config read
 
-configfile="./hotel.ini"
+configfile="./hotel32_temp.ini"
 conf=configparser.ConfigParser()
 
 if os.path.exists(configfile):
     conf.read(configfile)
 else:
     conf.add_section("setting")
-    conf.set("setting","D6T_type","8L")
-    conf.set("setting","dbfile","./hotel.db")
+    conf.set("setting","D6T_type","32L")
+    conf.set("setting","dbfile","./hotel32.db")
     conf.set("setting","log","./log/")
     conf.set("setting","camera","yes")
     conf.add_section("thingspeak")
@@ -49,8 +46,8 @@ else:
     conf.add_section("period")
 
     conf.set("period","total_period",str(3*60))#sec単位
-    conf.set("period","sampling",str(5))#sec単位
-    conf.set("period","thing_sampling",str(30))#sec単位
+    conf.set("period","sampling",str(0.5))#sec単位
+    conf.set("period","thing_sampling",str(70))#sec単位
 
     print("make config")
     with open(configfile, 'w') as configfile:
@@ -76,7 +73,7 @@ thg.set_field(fieldlist)
 #id は変更不可、それ以外を用途に合わせて編集
 #idは自動で追加されます
 
-key = [("cnt","int"),("time","text"),("temp","real"),("humid","real"),("th_ave","real"),("th_std","real"),("pressure","real"),("rawdata","text")]
+key = [("cnt","int"),("time","text"),("th_ave","real"),("th_std","real"),("rawdata","text")]
 #key={"cnt":"int","time":"text","temp":"real","humid":"real","th_avez":"real","th_std":"real","pressure":"real","rawdata":"text"}
 print(conf.get("setting","dbfile"))
 db=sql_lib.miyadb(conf.get("setting","dbfile"),key)
@@ -90,14 +87,16 @@ db.init_table2()
 #   測定関数定義
 #   　
 #SH30 temperature
-sht=sht30.SHT30()
+#sht=sht30.SHT30()
 
 #omron d6t
 
 d6t = d6t_lib.GroveD6t(conf.get("setting","D6T_type"))
+d6t.reopen()
+d6t.init_d6t()
 
 #omron pressure
-psensor = omron_2smpd_lib.Grove2smpd02e()
+#psensor = omron_2smpd_lib.Grove2smpd02e()
 
 
 
@@ -176,35 +175,42 @@ while pi.state != "quit":
 
         print("*** measure ***")
 
-        temp,humid=sht.read()
-        press, temp = psensor.readData()
-        try:
-                time.sleep(0.1)
-#                d6t.reopen()
-                tpn0, tptat = d6t.readData2()
-#                d6t.close()
-                if tpn0 == None:
-                        tptat=[0,0,0,0,0,0,0,0,0,0]
-        except IOError:
-                print("IOError")
+#        temp,humid=sht.read()
+#        press, temp = psensor.readData()
+        tpn0=None
+        d6t.reopen()
+        time.sleep(0.1)
+        tpn0, tptat = d6t.readData2()
+        d6t.close()
 
-        tpn=np.array(tpn0)
 
-        #thing speak
-        #datlist=[temp,humid,tpn.mean(),tpn.std(),press]
-        #thg.sendall(datlist)
+        if tpn0 != None:
+            #thing speak
+            #datlist=[temp,humid,tpn.mean(),tpn.std(),press]
+            #thg.sendall(datlist)
 
-        #key={"cnt":"int","time":"text","temp":"real","humid":"real","th_avez":"real","th_std":"real","pressure":"real","rawdata":"text"}
+            key={"cnt":"int","time":"text","th_avez":"real","th_std":"real","rawdata":"text"}
 
-        #sqlite append
-        pi.t1=time.time()
-        tm=dt.datetime.now()
-        dat=[pi.cnt,tm,temp,humid,tpn.mean(),tpn.std(),press,",".join([str(rr) for rr in tpn]) ]
-        db.append2(dat)
-        if tpn.std()>0.25:
-            if conf.get("setting","camera")=="yes":
-                fswebcamtest.savepicture(conf.get("setting","log"),pi.cnt)
-                print("capture")
+            #sqlite append
+            pi.t1=time.time()
+            tm=dt.datetime.now()
+            tpn=np.array(tpn0)
+
+#           Data save to csv
+#            filename="test{0}.csv".format(pi.cnt)
+#            f=open(filename,"wb")
+#            np.savetxt(f,tpn,delimiter=',',fmt="%.5f")
+#            f.close()
+
+
+            try:
+                tpn=np.array(tpn0)
+                if len(tpn)>0:
+                    dat=[pi.cnt,tm,tpn.mean(),tpn.std(),",".join([str(rr) for rr in tpn]) ]
+                    db.append2(dat)
+                    pi.buf_tpn=[tpn.mean(),tpn.std()]
+            except:
+                print("error tpn")
 
 
         #camera
@@ -219,22 +225,11 @@ while pi.state != "quit":
 
         print("*** measure2 thing ***")
 
-        temp,humid=sht.read()
-        press, temp = psensor.readData()
-        try:
-                time.sleep(1.0)
-#                d6t.reopen()
-                tpn0, tptat = d6t.readData2()
-#                d6t.close()
-                if tpn0 == None:
-                        tptat=[0,0,0,0,0,0,0,0,0,0]
-        except IOError:
-                print("IOError")
                 
-        tpn=np.array(tpn0)
+        tpn=np.array(pi.buf_tpn)
 
         #thing speak
-        datlist=[temp,humid,tpn.mean(),tpn.std(),press]
+        datlist=[tpn.mean(),tpn.std()]
         thg.sendall(datlist)
 
         #camera

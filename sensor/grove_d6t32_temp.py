@@ -17,17 +17,47 @@ class GroveD6t:
     handle = 0
     d6type=None
     buf_tpn=[]
+
+    def init_d6t(self):
+        self.handle = self.pi.i2c_open(1, self.I2C_ADDR)
+        self.pi.i2c_write_device(self.handle,[0x00])
+        ret=self.pi.i2c_read_device(self.handle,1)
+        self.pi.i2c_close(self.handle)
+        print(ret)
+
+        self.handle = self.pi.i2c_open(1, self.I2C_ADDR)
+        self.pi.i2c_write_device(self.handle,[0x01])
+        ret=self.pi.i2c_read_device(self.handle,1)
+        self.pi.i2c_close(self.handle)
+        print(ret)
+
+        self.handle = self.pi.i2c_open(1, self.I2C_ADDR)
+
+        self.pi.i2c_write_i2c_block_data(self.handle,0x02,[0x01])        
+#        self.pi.i2c_write_device(self.handle,[0x02,0x01])
+#        ret=self.pi.i2c_read_device(self.handle,1)
+        self.pi.i2c_close(self.handle)
+        print(ret)
+
+        self.handle = self.pi.i2c_open(1, self.I2C_ADDR)
+        self.pi.i2c_write_device(self.handle,[0x02])
+        ret=self.pi.i2c_read_device(self.handle,1)
+        self.pi.i2c_close(self.handle)
+        print(ret)
+
+
+        
+
     def reopen(self):
-        print("i2c addr {0}".format(self.I2C_ADDR))
         try:
-            print(self.I2C_ADDR)
             self.handle = self.pi.i2c_open(1, self.I2C_ADDR)
         except AttributeError:
             print('If you have not executed the "sudo pigpiod" command, please execute it.')
             raise
         except:
             print("open error")
-        
+
+
 
     def __init__(self,ty="44L"):
         self.d6type=ty
@@ -55,12 +85,24 @@ class GroveD6t:
 
 
         data=None
+        print("cond")
+
+#        self.handle = self.pi.i2c_open(1, self.I2C_ADDR)
+#        self.pi.i2c_write_device(self.handle,[0x00])
+#        ret=self.pi.i2c_read_device(self.handle,1)
+#        self.pi.i2c_close(self.handle)
+#        print(ret)
+
+
+
         try:
+            
             if self.d6type=="32L":
                 self.pi.i2c_write_device(self.handle, [0x4D])
             else:
                 self.pi.i2c_write_device(self.handle, [0x4c])
 
+            time.sleep(0.1)
             data = self.pi.i2c_read_device(self.handle, D6T[self.d6type]["BYTE"])
         except pigpio.error:
             print('readdata2 Failed to read data.')
@@ -80,9 +122,10 @@ class GroveD6t:
         #try:
         print("about data len  test")
         print(len(data))
+        print(data[0])
 
-        print("check print(data)")
-        print(data)
+#        print("check print(data)")
+#        print(data)
         
         print("loop")
 
@@ -96,12 +139,15 @@ class GroveD6t:
             return tp, tptat
         else:
             print("read error last")
+            return None,None
 #        except IndexError:
 #            print('got an incorrect index.')
 #            print(data)
 #            return None,None
 
 #        self.pi.i2c_close(self.handle)
+
+
 
 
 
