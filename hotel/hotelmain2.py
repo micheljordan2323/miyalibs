@@ -1,3 +1,6 @@
+####
+# 高速化検討
+
 import datetime as dt
 import time
 import os
@@ -176,7 +179,7 @@ while pi.state != "quit":
         temp,humid=sht.read()
         press, temp = psensor.readData()
         try:
-                time.sleep(1.0)
+                time.sleep(0.1)
 #                d6t.reopen()
                 tpn0, tptat = d6t.readData2()
 #                d6t.close()
@@ -198,6 +201,10 @@ while pi.state != "quit":
         tm=dt.datetime.now()
         dat=[pi.cnt,tm,temp,humid,tpn.mean(),tpn.std(),press,",".join([str(rr) for rr in tpn]) ]
         db.append2(dat)
+        if tpn.std()>0.25:
+            if conf.get("setting","camera")=="yes":
+                fswebcamtest.savepicture(conf.get("setting","log"),pi.cnt)
+                print("capture")
 
 
         #camera
